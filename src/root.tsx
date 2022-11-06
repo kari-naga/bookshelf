@@ -11,6 +11,7 @@ import {
   Scripts,
   Title,
 } from 'solid-start'
+import NavButton from './components/NavButton'
 import './root.css'
 
 export default function Root() {
@@ -24,9 +25,18 @@ export default function Root() {
       <Body>
         <Suspense>
           <ErrorBoundary>
-            <Routes>
-              <FileRoutes />
-            </Routes>
+            <header>
+              <nav class="flex justify-center gap-4 p-4 bg-blue-300">
+                <NavButton href="/">Home</NavButton>
+                <NavButton href="/collection">Collection</NavButton>
+                <NavButton href="/discover">Discover</NavButton>
+              </nav>
+            </header>
+            <main class="flex flex-col items-center p-4">
+              <Routes>
+                <FileRoutes />
+              </Routes>
+            </main>
           </ErrorBoundary>
         </Suspense>
         <Scripts />
